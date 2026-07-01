@@ -1,10 +1,12 @@
 name: Build Android APK
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+    inputs:
+      app_name:
+        description: 'اكتب اسم التطبيق هنا'
+        required: true
+        default: 'MyApp'
 
 jobs:
   build:
@@ -24,7 +26,7 @@ jobs:
 
       - name: Create Cordova Project
         run: |
-          cordova create my-app com.example.myapp MyApp
+          cordova create my-app com.example.myapp "${{ github.event.inputs.app_name }}"
           cd my-app
           cordova platform add android
           rm -rf www/*
@@ -43,10 +45,11 @@ jobs:
       - name: Build APK
         run: |
           cd my-app
-          cordova build android --device --release
+          # تعديل لضمان بناء نسخة debug لسهولة استخراجها وبدون مشاكل التوقيع الرقمي
+          cordova build android --device --debug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-release-apk
-          path: my-app/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+          name: ${{ github.event.inputs.app_name }}-APK
+          path: my-app/platforms/android/app/build/outputs/apk/debug/*.apk
