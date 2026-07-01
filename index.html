@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مُنشئ التطبيقات الذكي الخاص بي 🚀</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🤖 مصنع التطبيقات الذكي</h1>
+        <p class="subtitle">اكتب فكرتك بالعامية أو الفصحى، ودع الذكاء الاصطناعي يبرمجها لك في ثوانٍ!</p>
+
+        <div class="card">
+            <label>💡 اشرح فكرة التطبيق ومميزاته هنا:</label>
+            <textarea id="app-idea" rows="5" placeholder="مثال: أريد تطبيقاً لحساب السعرات الحرارية، يحتوي على قائمة للأطعمة، وبألوان مريحة للعين..."></textarea>
+            <button class="btn-generate" onclick="generateMyApp()">⚡ ابدأ برمجة التطبيق الآن</button>
+        </div>
+
+        <div id="loading" class="loading-box" style="display: none;">
+            ⏳ جاري التفكير وبناء الأكواد بدقة... انتظر ثواني يا بطل...
+        </div>
+
+        <div id="result-area" style="display: none; margin-top: 20px;">
+            <h2>🎉 تم بناء التطبيق بنجاح!</h2>
+            <p>انسخ الأكواد بالأسفل واستبدلها في ملفات جيت هاب:</p>
+
+            <div class="code-box">
+                <div class="code-header">
+                    <span>📄 index.html</span>
+                    <button onclick="copyCode('code-html')">📋 نسخ الكود</button>
+                </div>
+                <textarea id="code-html" readonly></textarea>
+            </div>
+
+            <div class="code-box">
+                <div class="code-header">
+                    <span>🎨 style.css</span>
+                    <button onclick="copyCode('code-css')">📋 نسخ الكود</button>
+                </div>
+                <textarea id="code-css" readonly></textarea>
+            </div>
+
+            <div class="code-box">
+                <div class="code-header">
+                    <span>⚡ script.js</span>
+                    <button onclick="copyCode('code-js')">📋 نسخ الكود</button>
+                </div>
+                <textarea id="code-js" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
