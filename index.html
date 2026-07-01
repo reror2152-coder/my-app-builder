@@ -3,28 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مُنشئ التطبيقات الذكي الخاص بي 🚀</title>
+    <title>مُنشئ التطبيقات الاحترافي 🚀</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
         <h1>🤖 مصنع التطبيقات الذكي</h1>
-        <p class="subtitle">اكتب فكرتك بالعامية أو الفصحى، ودع الذكاء الاصطناعي يبرمجها لك في ثوانٍ!</p>
+        <p class="subtitle">اكتب فكرتك باختصار، ودع النظام يحسنها ويبرمجها ويعاينها لك فوراً!</p>
 
         <div class="card">
-            <label>💡 اشرح فكرة التطبيق ومميزاته هنا:</label>
-            <textarea id="app-idea" rows="5" placeholder="مثال: أريد تطبيقاً لحساب السعرات الحرارية، يحتوي على قائمة للأطعمة، وبألوان مريحة للعين..."></textarea>
-            <button class="btn-generate" onclick="generateMyApp()">⚡ ابدأ برمجة التطبيق الآن</button>
+            <label>💡 اكتب فكرتك باختصار شديد:</label>
+            <textarea id="app-idea" rows="4" placeholder="مثال: حاسبة مبيعات تدعم الطباعة الحرارية..."></textarea>
+            
+            <div class="options-group">
+                <label><input type="checkbox" id="add-printing" checked> دعم الطباعة الحرارية تلقائياً 🖨️</label>
+                <label><input type="checkbox" id="add-firebase"> دعم الحفظ السحابي (Firebase) ☁️</label>
+            </div>
+
+            <button class="btn-generate" onclick="generateMyApp()">⚡ ابدأ الهندسة والبرمجة الفورية</button>
         </div>
 
         <div id="loading" class="loading-box" style="display: none;">
-            ⏳ جاري التفكير وبناء الأكواد بدقة... انتظر ثواني يا بطل...
+            ⏳ جاري صياغة الفكرة برمجياً وبناء الأكواد الحية... انتظر ثواني يا بطل...
+        </div>
+
+        <div id="preview-area" class="card" style="display: none; margin-top: 20px; border-color: #10b981;">
+            <h2 style="color: #10b981; margin-top: 0;">👁️ المعاينة الحية الفورية</h2>
+            <p style="font-size: 13px; color: #94a3b8;">جرّب تطبيقك واختبر أزراره الآن مباشرة قبل نسخه لجيت هاب:</p>
+            <iframe id="live-preview-frame"></iframe>
         </div>
 
         <div id="result-area" style="display: none; margin-top: 20px;">
-            <h2>🎉 تم بناء التطبيق بنجاح!</h2>
-            <p>انسخ الأكواد بالأسفل واستبدلها في ملفات جيت هاب:</p>
+            <h2>🎉 تم توليد الأكواد بنجاح!</h2>
+            <p>الأكواد منسقة وجاهزة، انسخها إلى مستودعاتك المخصصة للأندرويد:</p>
 
             <div class="code-box">
                 <div class="code-header">
